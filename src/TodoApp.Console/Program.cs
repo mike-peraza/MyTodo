@@ -5,7 +5,7 @@ using TodoApp.Infrastructure;
 
 var services = new ServiceCollection();
 services.AddInfrastructure();
-var serviceProvider = services.BuildServiceProvider();
+ServiceProvider serviceProvider = services.BuildServiceProvider();
 
 var todoService = serviceProvider.GetRequiredService<ITodoService>();
 
@@ -92,7 +92,7 @@ async Task AddNewTodo()
 {
     Console.Write("Enter title: ");
     var title = Console.ReadLine() ?? "";
-    
+
     Console.Write("Enter description: ");
     var description = Console.ReadLine() ?? "";
 
@@ -163,7 +163,7 @@ async Task UpdateTodo()
             Console.WriteLine($"Current title: {todo.Title}");
             Console.Write("Enter new title (leave empty to keep current): ");
             var title = Console.ReadLine();
-            
+
             Console.WriteLine($"Current description: {todo.Description}");
             Console.Write("Enter new description (leave empty to keep current): ");
             var description = Console.ReadLine();
